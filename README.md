@@ -1,4 +1,4 @@
-# RATle
+# RATle (pronounced as "rattle")
 
 A Remote Associates Test in game-format similar to Wordle.
 
