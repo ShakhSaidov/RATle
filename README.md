@@ -1,6 +1,6 @@
-# RATle (pronounced as "rattle")
+# RATle
 
-A Remote Associates Test in game-format similar to Wordle.
+RATle -  pronounced as "rattle" - A Remote Associates Test in game-format similar to Wordle.
 
 Data taken from [remote-associates-test](https://www.remote-associates-test.com/).
 
