@@ -4,9 +4,14 @@ import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
+//since there is no 5 letter limit, checking is unnecessary
 export const isWordInWordList = (word: string) => {
+  const answers = WORDS.map((problem) => problem[1])
+
+  console.log('answers: ', answers)
+
   return (
-    WORDS.includes(localeAwareLowerCase(word)) ||
+    answers.includes(localeAwareLowerCase(word)) ||
     VALID_GUESSES.includes(localeAwareLowerCase(word))
   )
 }
@@ -80,8 +85,13 @@ export const getWordOfDay = () => {
   const index = Math.floor((now - epochMs) / msInDay)
   const nextday = (index + 1) * msInDay + epochMs
 
+  const randomIndex = Math.floor(Math.random() * WORDS.length)
+
   return {
-    solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
+    associations: WORDS[randomIndex % WORDS.length][0],
+    solution: localeAwareUpperCase(
+      WORDS[randomIndex % WORDS.length][1] as string
+    ),
     solutionIndex: index,
     tomorrow: nextday,
   }

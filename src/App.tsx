@@ -14,7 +14,7 @@ import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
-  WORD_NOT_FOUND_MESSAGE,
+  //WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
   HARD_MODE_ALERT_MESSAGE,
 } from './constants/strings'
@@ -26,7 +26,7 @@ import {
   WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
 import {
-  isWordInWordList,
+  //isWordInWordList,
   isWinningWord,
   solution,
   findFirstUnusedReveal,
@@ -194,12 +194,15 @@ function App() {
       })
     }
 
+    //since there is no 5 letter limit, checking is unnecessary
+    /*
     if (!isWordInWordList(currentGuess)) {
       setCurrentRowClass('jiggle')
       return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
         onClose: clearCurrentRowClass,
       })
     }
+    */
 
     // enforce hard mode - all guesses must contain all previously revealed letters
     if (isHardMode) {
