@@ -39,6 +39,7 @@ import {
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
+import { Associations } from './lib/associations'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 import './App.css'
@@ -250,7 +251,7 @@ function App() {
 
   return (
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-8 mt-20">
+      <div className="flex w-96 mx-auto items-center mb-16 mt-12">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
@@ -267,6 +268,7 @@ function App() {
           onClick={() => setIsSettingsModalOpen(true)}
         />
       </div>
+      <Associations />
       <Grid
         guesses={guesses}
         currentGuess={currentGuess}

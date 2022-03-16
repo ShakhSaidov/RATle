@@ -88,7 +88,7 @@ export const getWordOfDay = () => {
   const randomIndex = Math.floor(Math.random() * WORDS.length)
 
   return {
-    associations: WORDS[randomIndex % WORDS.length][0],
+    associations: WORDS[randomIndex % WORDS.length][0] as string[],
     solution: localeAwareUpperCase(
       WORDS[randomIndex % WORDS.length][1] as string
     ),
@@ -97,4 +97,5 @@ export const getWordOfDay = () => {
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export const { associations, solution, solutionIndex, tomorrow } =
+  getWordOfDay()
