@@ -12,7 +12,9 @@ export const Associations = () => {
     <div>
       <div className={containerClass}>
         {associations.map((association) => (
-          <div className={associationClass}>{association}</div>
+          <div key={association} className={associationClass}>
+            {association}
+          </div>
         ))}
       </div>
     </div>
