@@ -1,5 +1,7 @@
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
+import { MAX_CHALLENGES } from '../../constants/settings'
+import { INFO_MODAL_TEXT } from '../../constants/strings'
 
 type Props = {
   isOpen: boolean
@@ -8,12 +10,16 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={INFO_MODAL_TEXT}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <p className="text-sm text-gray-500 dark:text-gray-300">
         Welcome to RATle - pronounced as "rattle" - a variation of Wordle, where
         you are given 3 words associated in some way to the answer. Try to guess
-        the word in 3 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        the word in {MAX_CHALLENGES} tries. After each guess, the color of the
+        tiles will change to show how close your guess was to the word.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">

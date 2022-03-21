@@ -22,7 +22,7 @@ export const Grid = ({
       : []
 
   return (
-    <div className="pb-6">
+    <div className="pb-8">
       {guesses.map((guess, i) => (
         <CompletedRow
           key={i}
