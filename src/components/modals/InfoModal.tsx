@@ -65,16 +65,45 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         The letter U is not in the word in any spot.
       </p>
 
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is a fork of an open source version of the word guessing game we
-        all know and love -{' '}
-        <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
-        >
-          check out the code here
-        </a>{' '}
-      </p>
+      <div className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        <p>Inspired by Martha Mednick's Remote Associate Test. </p>
+
+        <p>
+          Data used:{' '}
+          <a
+            href="https://www.remote-associates-test.com/"
+            className="underline font-bold"
+            target="_blank"
+            rel="noreferrer"
+          >
+            RAT
+          </a>{' '}
+        </p>
+
+        <p>
+          Forked from:{' '}
+          <a
+            href="https://github.com/cwackerfuss/react-wordle"
+            className="underline font-bold"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reactle
+          </a>{' '}
+        </p>
+
+        <p>
+          Source code:{' '}
+          <a
+            href="https://github.com/ShakhSaidov/RATle"
+            className="underline font-bold"
+            target="_blank"
+            rel="noreferrer"
+          >
+            RATle
+          </a>{' '}
+        </p>
+      </div>
     </BaseModal>
   )
 }
