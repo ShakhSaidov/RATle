@@ -8,8 +8,6 @@ import { default as GraphemeSplitter } from 'grapheme-splitter'
 export const isWordInWordList = (word: string) => {
   const answers = WORDS.map((problem) => problem[1])
 
-  console.log('answers: ', answers)
-
   return (
     answers.includes(localeAwareLowerCase(word)) ||
     VALID_GUESSES.includes(localeAwareLowerCase(word))
@@ -78,20 +76,16 @@ export const localeAwareUpperCase = (text: string) => {
 }
 
 export const getWordOfDay = () => {
-  // January 1, 2022 Game Epoch
-  const epochMs = new Date('January 1, 2022 00:00:00').valueOf()
+  // March 21, 2022 Game Epoch
+  const epochMs = new Date('March 21, 2022 00:00:00').valueOf()
   const now = Date.now()
   const msInDay = 86400000
   const index = Math.floor((now - epochMs) / msInDay)
   const nextday = (index + 1) * msInDay + epochMs
 
-  const randomIndex = Math.floor(Math.random() * WORDS.length)
-
   return {
-    associations: WORDS[randomIndex % WORDS.length][0] as string[],
-    solution: localeAwareUpperCase(
-      WORDS[randomIndex % WORDS.length][1] as string
-    ),
+    associations: WORDS[index % WORDS.length][0] as string[],
+    solution: localeAwareUpperCase(WORDS[index % WORDS.length][1] as string),
     solutionIndex: index,
     tomorrow: nextday,
   }
