@@ -66,7 +66,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <div className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        <p>Inspired by Martha Mednick's Remote Associate Test. </p>
+        <p>Inspired by Martha Mednick's Remote Associates Test. </p>
 
         <p>
           Data used:{' '}
